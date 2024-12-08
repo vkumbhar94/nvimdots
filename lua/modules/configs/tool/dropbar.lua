@@ -35,6 +35,9 @@ return function()
 		icons = {
 			enable = true,
 			kinds = {
+				file = icons.kind.File,
+				folder = icons.kind.Folder,
+				["*"] = icons.kind.File,
 				symbols = {
 					-- Type
 					Array = icons.type.Array,
