@@ -55,7 +55,7 @@ return function()
 		local ok, custom_handler = pcall(require, "user.configs.dap-clients." .. dap_name)
 		if not ok then
 			-- Use preset if there is no user definition
-			ok, custom_handler = pcall(require, "tool.dap.clients." .. dap_name)
+			ok, custom_handler = pcall(require, "modules.configs.tool.dap.clients." .. dap_name)
 		end
 		if not ok then
 			-- Default to use factory config for clients(s) that doesn't include a spec
