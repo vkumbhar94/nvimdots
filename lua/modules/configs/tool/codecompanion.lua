@@ -41,7 +41,6 @@ return function()
 	end
 
 	vim.g.current_chat_model = current_model
-
 	require("modules.utils").load_plugin("codecompanion", {
 		opts = {
 			language = chat_lang,
