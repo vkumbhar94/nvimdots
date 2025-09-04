@@ -5,7 +5,6 @@ return function()
 	local models = require("core.settings").chat_models
 	local current_model = models[1]
 	vim.g.current_chat_model = current_model
-
 	require("modules.utils").load_plugin("codecompanion", {
 		opts = {
 			language = chat_lang,
