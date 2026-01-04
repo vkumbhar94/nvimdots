@@ -116,7 +116,7 @@ return function()
 		},
 		extensions = {
 			history = {
-				enabled = true,
+				enabled = false, -- Temporarily disabled to fix nil chat error
 				opts = {
 					-- Keymap to open history from chat buffer (default: gh)
 					keymap = "gh",
