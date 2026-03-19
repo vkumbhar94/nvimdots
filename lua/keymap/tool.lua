@@ -43,36 +43,30 @@ local mappings = {
 			:with_noremap()
 			:with_silent()
 			:with_desc("terminal: Toggle horizontal"),
-		["n|<A-\\>"] = map_cr("ToggleTerm direction=vertical")
+		["n|<C-S-\\>"] = map_cr("ToggleTerm direction=vertical")
 			:with_noremap()
 			:with_silent()
 			:with_desc("terminal: Toggle vertical"),
-		["i|<A-\\>"] = map_cmd("<Esc><Cmd>ToggleTerm direction=vertical<CR>")
+		["i|<C-S-\\>"] = map_cmd("<Esc><Cmd>ToggleTerm direction=vertical<CR>")
 			:with_noremap()
 			:with_silent()
 			:with_desc("terminal: Toggle vertical"),
-		["t|<A-\\>"] = map_cmd("<Cmd>ToggleTerm<CR>")
+		["t|<C-S-\\>"] = map_cmd("<Cmd>ToggleTerm<CR>")
 			:with_noremap()
 			:with_silent()
 			:with_desc("terminal: Toggle vertical"),
-		["n|<F5>"] = map_cr("ToggleTerm direction=vertical")
-			:with_noremap()
-			:with_silent()
-			:with_desc("terminal: Toggle vertical"),
-		["i|<F5>"] = map_cmd("<Esc><Cmd>ToggleTerm direction=vertical<CR>")
-			:with_noremap()
-			:with_silent()
-			:with_desc("terminal: Toggle vertical"),
-		["t|<F5>"] = map_cmd("<Cmd>ToggleTerm<CR>"):with_noremap():with_silent():with_desc("terminal: Toggle vertical"),
-		["n|<A-d>"] = map_cr("ToggleTerm direction=float")
+		["n|<C-t>"] = map_cr("ToggleTerm direction=float")
 			:with_noremap()
 			:with_silent()
 			:with_desc("terminal: Toggle float"),
-		["i|<A-d>"] = map_cmd("<Esc><Cmd>ToggleTerm direction=float<CR>")
+		["i|<C-t>"] = map_cmd("<Esc><Cmd>ToggleTerm direction=float<CR>")
 			:with_noremap()
 			:with_silent()
 			:with_desc("terminal: Toggle float"),
-		["t|<A-d>"] = map_cmd("<Cmd>ToggleTerm<CR>"):with_noremap():with_silent():with_desc("terminal: Toggle float"),
+		["t|<C-t>"] = map_cmd("<Cmd>ToggleTerm<CR>")
+			:with_noremap()
+			:with_silent()
+			:with_desc("terminal: Toggle float"),
 		["n|<leader>gg"] = map_callback(function()
 				helpers.toggle_lazygit()
 			end)
