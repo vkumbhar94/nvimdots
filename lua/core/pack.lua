@@ -124,7 +124,7 @@ function Lazy:load_lazy()
 			rtp = {
 				reset = true, -- reset the runtime path to $VIMRUNTIME and the config directory
 				---@type string[]
-				paths = {}, -- add any custom paths here that you want to include in the rtp
+				paths = { data_dir }, -- add any custom paths here that you want to include in the rtp
 				disabled_plugins = {
 					-- Comment out `"editorconfig"` to enable native EditorConfig support
 					-- WARN: Sleuth.vim already includes all the features provided by this plugin.
@@ -151,6 +151,7 @@ function Lazy:load_lazy()
 			},
 		},
 	}
+	lazy_settings.rocks = { hererocks = false }
 	if is_mac then
 		lazy_settings.concurrency = 20
 	end
