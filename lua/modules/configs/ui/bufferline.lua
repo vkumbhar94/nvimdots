@@ -4,8 +4,22 @@ return function()
 	local opts = {
 		options = {
 			always_show_bufferline = true,
-			close_command = "BufDel! %d",
-			right_mouse_command = "BufDel! %d",
+			close_command = function(bufnum)
+				local buftype = vim.api.nvim_get_option_value("buftype", { buf = bufnum })
+				if buftype == "terminal" then
+					vim.cmd("bd! " .. bufnum)
+				else
+					vim.cmd("BufDel " .. bufnum)
+				end
+			end,
+			right_mouse_command = function(bufnum)
+				local buftype = vim.api.nvim_get_option_value("buftype", { buf = bufnum })
+				if buftype == "terminal" then
+					vim.cmd("bd! " .. bufnum)
+				else
+					vim.cmd("BufDel " .. bufnum)
+				end
+			end,
 			tab_size = 20,
 			separator_style = "thin",
 			show_buffer_icons = true,
