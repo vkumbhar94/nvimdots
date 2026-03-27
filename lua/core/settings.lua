@@ -6,7 +6,7 @@ settings["use_ssh"] = true
 
 -- Set to false if you don't use Copilot.
 ---@type boolean
-settings["use_copilot"] = true
+settings["use_copilot"] = false
 
 -- Set to false if you don't want to format on save.
 ---@type boolean
