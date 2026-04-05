@@ -19,8 +19,9 @@ return function()
 				return nil
 			end
 
-			return line_count > threshold and require("rainbow-delimiters").strategy["global"]
-				or require("rainbow-delimiters").strategy["local"]
+			-- Use global strategy only; "local" crashes on Neovim 0.12.0 due to
+			-- TSNode API changes in rainbow-delimiters (hiphish/rainbow-delimiters.nvim#220)
+			return require("rainbow-delimiters").strategy["global"]
 		end
 	end
 
