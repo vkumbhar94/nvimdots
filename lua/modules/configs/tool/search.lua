@@ -87,7 +87,10 @@ return function()
 			{ "Diff current file", extensions.advanced_git_search.diff_commit_file },
 		},
 		dossier = {
-			{ "Sessions", extensions.persisted.persisted },
+			-- persisted.nvim -> auto-session's session-lens (see lua/user/plugins/auto-session.lua).
+			-- No override hook reaches this table (it's built eagerly before `load_plugin()`
+			-- ever sees a `user.configs.search` override), so it's edited directly.
+			{ "Sessions", extensions["session-lens"].search_session },
 			{
 				"Projects",
 				function()

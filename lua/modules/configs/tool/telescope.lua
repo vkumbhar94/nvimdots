@@ -86,6 +86,8 @@ return function()
 	require("telescope").load_extension("projects")
 	require("telescope").load_extension("undo")
 	require("telescope").load_extension("zoxide")
-	require("telescope").load_extension("persisted")
+	-- persisted.nvim replaced by rmagatti/auto-session (lua/user/plugins/auto-session.lua);
+	-- this line has no override hook (see lua/user/keymap/init.lua header for why), so it's edited directly.
+	require("telescope").load_extension("session-lens")
 	require("telescope").load_extension("advanced_git_search")
 end
