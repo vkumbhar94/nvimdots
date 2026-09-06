@@ -14,6 +14,7 @@
 local bind = require("keymap.bind")
 local map_cr = bind.map_cr
 local map_cu = bind.map_cu
+local map_cmd = bind.map_cmd
 local map_callback = bind.map_callback
 
 return {
@@ -35,4 +36,8 @@ return {
 		:with_noremap()
 		:with_silent()
 		:with_desc("session: Find (Telescope)"),
+
+	-- Marks
+	["n|<leader>mm"] = map_cmd(":marks<CR>"):with_noremap():with_silent():with_desc("marks: List"),
+	["n|<leader>md"] = map_cmd(":delmarks "):with_noremap():with_desc("marks: Delete (prompt)"),
 }
